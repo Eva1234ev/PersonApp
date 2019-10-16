@@ -8,14 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		A6149B8C23507B040094472C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6149B8B23507B040094472C /* AppDelegate.swift */; };
-		A6149B8E23507B040094472C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6149B8D23507B040094472C /* SceneDelegate.swift */; };
-		A6149B9023507B040094472C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6149B8F23507B040094472C /* ViewController.swift */; };
 		A6149B9323507B040094472C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6149B9123507B040094472C /* Main.storyboard */; };
 		A6149B9623507B040094472C /* PersonApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A6149B9423507B040094472C /* PersonApp.xcdatamodeld */; };
 		A6149B9823507B060094472C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6149B9723507B060094472C /* Assets.xcassets */; };
 		A6149B9B23507B060094472C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6149B9923507B060094472C /* LaunchScreen.storyboard */; };
 		A6149BA623507B060094472C /* PersonAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6149BA523507B060094472C /* PersonAppTests.swift */; };
 		A6149BB123507B060094472C /* PersonAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6149BB023507B060094472C /* PersonAppUITests.swift */; };
+		A6149BC723507F920094472C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6149BC623507F920094472C /* HomeViewController.swift */; };
+		A6149C05235091C20094472C /* PersonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6149C04235091C20094472C /* PersonsTableViewCell.swift */; };
+		A6149C0923509D020094472C /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6149C0823509D020094472C /* Person.swift */; };
+		A6149C102350A1530094472C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6149C0C2350A1530094472C /* Data.swift */; };
+		A6149C112350A1530094472C /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6149C0D2350A1530094472C /* Encodable.swift */; };
+		A6149C122350A1530094472C /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6149C0E2350A1530094472C /* URLSession.swift */; };
+		A6149C172350A1BE0094472C /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6149C162350A1BE0094472C /* ResponseModel.swift */; };
+		A6149C192350BD1D0094472C /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6149C182350BD1D0094472C /* RequestManager.swift */; };
+		A6149C1B2350C5180094472C /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6149C1A2350C5180094472C /* Error.swift */; };
+		A6149C1E23512A410094472C /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6149C1D23512A410094472C /* UILabel.swift */; };
+		A6149C2123514AC40094472C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6149C2023514AC40094472C /* UIView.swift */; };
+		A6149C23235153870094472C /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6149C22235153870094472C /* UIImageView.swift */; };
+		A6149C25235161F10094472C /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6149C24235161F10094472C /* UIViewController.swift */; };
+		A67EF6AC2357567400A4FD6A /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67EF6AB2357567400A4FD6A /* PersonViewController.swift */; };
+		A67EF6AE23576EAD00A4FD6A /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67EF6AD23576EAD00A4FD6A /* PageCell.swift */; };
+		A67EF6B023576EDC00A4FD6A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67EF6AF23576EDC00A4FD6A /* Extensions.swift */; };
+		A68495572353D79900AB13AC /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68495562353D79900AB13AC /* MenuTableViewController.swift */; };
+		A6849559235408BB00AB13AC /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6849558235408BB00AB13AC /* SplitViewController.swift */; };
+		A684955D23542BD700AB13AC /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A684955C23542BD700AB13AC /* SettingViewController.swift */; };
+		A6E63BF82353285E0001F268 /* ImageCash.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E63BF72353285E0001F268 /* ImageCash.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +56,6 @@
 /* Begin PBXFileReference section */
 		A6149B8823507B040094472C /* PersonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6149B8B23507B040094472C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A6149B8D23507B040094472C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A6149B8F23507B040094472C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A6149B9223507B040094472C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6149B9523507B040094472C /* PersonApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PersonApp.xcdatamodel; sourceTree = "<group>"; };
 		A6149B9723507B060094472C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +67,26 @@
 		A6149BAC23507B060094472C /* PersonAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PersonAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6149BB023507B060094472C /* PersonAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonAppUITests.swift; sourceTree = "<group>"; };
 		A6149BB223507B060094472C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6149BC623507F920094472C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A6149C04235091C20094472C /* PersonsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsTableViewCell.swift; sourceTree = "<group>"; };
+		A6149C0823509D020094472C /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		A6149C0C2350A1530094472C /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		A6149C0D2350A1530094472C /* Encodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
+		A6149C0E2350A1530094472C /* URLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
+		A6149C162350A1BE0094472C /* ResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
+		A6149C182350BD1D0094472C /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		A6149C1A2350C5180094472C /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		A6149C1D23512A410094472C /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		A6149C2023514AC40094472C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		A6149C22235153870094472C /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		A6149C24235161F10094472C /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		A67EF6AB2357567400A4FD6A /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
+		A67EF6AD23576EAD00A4FD6A /* PageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
+		A67EF6AF23576EDC00A4FD6A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A68495562353D79900AB13AC /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		A6849558235408BB00AB13AC /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		A684955C23542BD700AB13AC /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		A6E63BF72353285E0001F268 /* ImageCash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCash.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +137,13 @@
 		A6149B8A23507B040094472C /* PersonApp */ = {
 			isa = PBXGroup;
 			children = (
+				A6E63BF923533F6C0001F268 /* Store */,
+				A6149C1C23512A1D0094472C /* Extensions */,
+				A6149C0A23509FCD0094472C /* Service */,
+				A6149C0723509CCB0094472C /* Model */,
+				A6149BBF23507E800094472C /* Cells */,
+				A6149BBE23507E3E0094472C /* ViewControllers */,
 				A6149B8B23507B040094472C /* AppDelegate.swift */,
-				A6149B8D23507B040094472C /* SceneDelegate.swift */,
-				A6149B8F23507B040094472C /* ViewController.swift */,
 				A6149B9123507B040094472C /* Main.storyboard */,
 				A6149B9723507B060094472C /* Assets.xcassets */,
 				A6149B9923507B060094472C /* LaunchScreen.storyboard */,
@@ -129,6 +169,76 @@
 				A6149BB223507B060094472C /* Info.plist */,
 			);
 			path = PersonAppUITests;
+			sourceTree = "<group>";
+		};
+		A6149BBE23507E3E0094472C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A6849558235408BB00AB13AC /* SplitViewController.swift */,
+				A68495562353D79900AB13AC /* MenuTableViewController.swift */,
+				A6149BC623507F920094472C /* HomeViewController.swift */,
+				A684955C23542BD700AB13AC /* SettingViewController.swift */,
+				A67EF6AB2357567400A4FD6A /* PersonViewController.swift */,
+				A67EF6AF23576EDC00A4FD6A /* Extensions.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A6149BBF23507E800094472C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A6149C04235091C20094472C /* PersonsTableViewCell.swift */,
+				A67EF6AD23576EAD00A4FD6A /* PageCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A6149C0723509CCB0094472C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A6149C0823509D020094472C /* Person.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A6149C0A23509FCD0094472C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A6149C182350BD1D0094472C /* RequestManager.swift */,
+				A6149C0B2350A1530094472C /* Extentions */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		A6149C0B2350A1530094472C /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				A6149C162350A1BE0094472C /* ResponseModel.swift */,
+				A6149C0C2350A1530094472C /* Data.swift */,
+				A6149C0D2350A1530094472C /* Encodable.swift */,
+				A6149C0E2350A1530094472C /* URLSession.swift */,
+				A6149C1A2350C5180094472C /* Error.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		A6149C1C23512A1D0094472C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A6149C1D23512A410094472C /* UILabel.swift */,
+				A6149C2023514AC40094472C /* UIView.swift */,
+				A6149C22235153870094472C /* UIImageView.swift */,
+				A6149C24235161F10094472C /* UIViewController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A6E63BF923533F6C0001F268 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				A6E63BF72353285E0001F268 /* ImageCash.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,10 +372,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6149B9023507B040094472C /* ViewController.swift in Sources */,
+				A6149C112350A1530094472C /* Encodable.swift in Sources */,
+				A684955D23542BD700AB13AC /* SettingViewController.swift in Sources */,
+				A6149C1E23512A410094472C /* UILabel.swift in Sources */,
+				A6E63BF82353285E0001F268 /* ImageCash.swift in Sources */,
+				A6149C192350BD1D0094472C /* RequestManager.swift in Sources */,
+				A6149C1B2350C5180094472C /* Error.swift in Sources */,
+				A6149C122350A1530094472C /* URLSession.swift in Sources */,
 				A6149B8C23507B040094472C /* AppDelegate.swift in Sources */,
+				A6149C25235161F10094472C /* UIViewController.swift in Sources */,
+				A6149C23235153870094472C /* UIImageView.swift in Sources */,
 				A6149B9623507B040094472C /* PersonApp.xcdatamodeld in Sources */,
-				A6149B8E23507B040094472C /* SceneDelegate.swift in Sources */,
+				A67EF6AE23576EAD00A4FD6A /* PageCell.swift in Sources */,
+				A67EF6AC2357567400A4FD6A /* PersonViewController.swift in Sources */,
+				A6149C0923509D020094472C /* Person.swift in Sources */,
+				A6149C2123514AC40094472C /* UIView.swift in Sources */,
+				A68495572353D79900AB13AC /* MenuTableViewController.swift in Sources */,
+				A6149C05235091C20094472C /* PersonsTableViewCell.swift in Sources */,
+				A67EF6B023576EDC00A4FD6A /* Extensions.swift in Sources */,
+				A6149C172350A1BE0094472C /* ResponseModel.swift in Sources */,
+				A6149BC723507F920094472C /* HomeViewController.swift in Sources */,
+				A6149C102350A1530094472C /* Data.swift in Sources */,
+				A6849559235408BB00AB13AC /* SplitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,13 +498,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -424,12 +553,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -441,13 +571,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VAL3PFVCV2;
 				INFOPLIST_FILE = PersonApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = eva.PersonApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -459,13 +590,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VAL3PFVCV2;
 				INFOPLIST_FILE = PersonApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = eva.PersonApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
