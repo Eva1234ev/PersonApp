@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController:  UIViewController {//BaseViewController {
+class HomeViewController:  UIViewController {
     private enum CellIdentifiers {
         static let list = "PersonsTableViewCell"
     }

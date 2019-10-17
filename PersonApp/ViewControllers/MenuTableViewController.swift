@@ -53,11 +53,6 @@ class MenuTableViewController: UITableViewController {
         {
 
             if let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController, indexPath.row == 0{
-                
-              //  let mode = split.displayMode
-              //  if mode == .primaryOverlay {
-                  //  split.preferredDisplayMode = .primaryHidden
-              //  }
              split.showDetailViewController(VC, sender: nil)
                 //self.performSegue(withIdentifier: "home", sender: self)
             }else if let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SettingViewController") as? SettingViewController{
