@@ -30,7 +30,7 @@ class PersonViewController: UIViewController, UICollectionViewDataSource, UIColl
         let pc = UIPageControl()
         pc.pageIndicatorTintColor = .lightGray
         pc.currentPageIndicatorTintColor = UIColor(red:0.63, green:0.35, blue:0.76, alpha:1.0)
-        pc.numberOfPages = self.pages.count + 1
+        pc.numberOfPages = self.pages.count
         return pc
     }()
     
