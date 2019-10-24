@@ -53,29 +53,31 @@ class MenuTableViewController: UITableViewController {
         {
             
             if let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController, indexPath.row == 0{
-                split.showDetailViewController(VC, sender: nil)
+                let navigationController = UINavigationController(rootViewController: VC)                
+                split.showDetailViewController(navigationController, sender: nil)
                 
             }else if let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SettingViewController") as? SettingViewController{
-                split.showDetailViewController(VC, sender: nil)
+                let navigationController = UINavigationController(rootViewController: VC)
+                split.showDetailViewController(navigationController, sender: nil)
             }
         }
     }
     
     
-    
-    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        if segue.identifier == "setting" {
-            let controller = (segue.destination as! UINavigationController).topViewController as! SettingViewController
-            controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
-            controller.navigationItem.leftItemsSupplementBackButton = true
-        }else{
-            let controller = (segue.destination as! UINavigationController).topViewController as! HomeViewController
-            controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
-            controller.navigationItem.leftItemsSupplementBackButton = true
-            
-        }
-        
-    }
+//
+//    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//
+//        if segue.identifier == "setting" {
+//            let controller = (segue.destination as! UINavigationController).topViewController as! SettingViewController
+//            controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
+//            controller.navigationItem.leftItemsSupplementBackButton = true
+//        }else{
+//            let controller = (segue.destination as! UINavigationController).topViewController as! HomeViewController
+//            controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
+//            controller.navigationItem.leftItemsSupplementBackButton = true
+//
+//        }
+//
+//    }
     
 }

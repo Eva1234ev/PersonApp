@@ -97,7 +97,7 @@ class PersonViewController: UIViewController, AddPersonViewControllerDelegate  {
         self.collectionView.anchorToTop(self.view.topAnchor, left: self.view.leftAnchor, bottom: self.view.bottomAnchor, right: self.view.rightAnchor)
         
         self.registerCells()
-        self.collectionView.scrollToItem(at: IndexPath(row: self.pages.index(of: self.currentPerson!)!, section: 0), at: UICollectionViewScrollPosition.left, animated: true)
+        
         //        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .white)
         //        self.view.addSubview(activityIndicator)
         //        activityIndicator.center = CGPoint(x: self.view.bounds.midX, y: self.view.bounds.midY);
@@ -183,12 +183,12 @@ class PersonViewController: UIViewController, AddPersonViewControllerDelegate  {
         collectionView.register(PageCell.self, forCellWithReuseIdentifier: cellId)
     }
     
-
+    
     
 }
 
 extension PersonViewController : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
-
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return pages.count
@@ -198,8 +198,15 @@ extension PersonViewController : UICollectionViewDataSource, UICollectionViewDel
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! PageCell
         
-        let page = pages[(indexPath as NSIndexPath).item]
-        cell.page = page
+        if (currentPerson != nil)
+        {
+            self.collectionView.scrollToItem(at: IndexPath(row: self.pages.index(of: self.currentPerson!)!, section: 0), at: UICollectionViewScrollPosition.left, animated: true)
+            currentPerson = nil
+        }
+        else{
+            let page = pages[(indexPath as NSIndexPath).item]
+            cell.page = page
+        }
         
         return cell
     }

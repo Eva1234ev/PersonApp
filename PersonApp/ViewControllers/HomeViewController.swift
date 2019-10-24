@@ -42,6 +42,7 @@ class HomeViewController:  UIViewController, AddPersonViewControllerDelegate {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
         updateData()
     }
     
@@ -73,7 +74,7 @@ class HomeViewController:  UIViewController, AddPersonViewControllerDelegate {
         }
         
         let isFetched = UserDefaults.standard.value(forKey: "isAllreadyFetch") as? Bool
-        // appDelegate.deleteAll()
+        // appDelegate.deleteAll() --> This call delete all save data
         if (isFetched == nil) || !(isFetched ?? false){
             //API calling
             viewModel.getListData()
