@@ -1,10 +1,11 @@
 //
 //  CoreDataManager.swift
-//  PersistentTodoList
+//  PersonApp
 //
-//  Created by Alok Upadhyay on 30/03/2018.
-//  Copyright © 2017 Alok Upadhyay. All rights reserved.
-
+//  Created by Eva on 10/24/19.
+//  Copyright © 2019 Eva. All rights reserved.
+//
+//
 
 import Foundation
 import CoreData
