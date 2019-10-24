@@ -17,16 +17,18 @@ class PageCell: UICollectionViewCell {
                 return
             }
 
-            if let url = URL( string:page.image)
+            if let url = URL( string:page.image!)
             {
-              imageView.load(url: url, id : page.itemID)
+                imageView.load(url: url, id : page.itemId!)
             }
-            
+            else {
+                imageView.image = UIImage(named: "profile")
+            }
             let color = UIColor(white: 0.2, alpha: 1)
             
-            let attributedText = NSMutableAttributedString(string: page.name, attributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.medium), convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor): color]))
+            let attributedText = NSMutableAttributedString(string: page.name!, attributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.medium), convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor): color]))
             
-            attributedText.append(NSAttributedString(string: "\n\n\(page.description)", attributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont.systemFont(ofSize: 19), convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor): color])))
+            attributedText.append(NSAttributedString(string: "\n\n\(page.desc!)", attributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont.systemFont(ofSize: 19), convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor): color])))
             
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.alignment = .center

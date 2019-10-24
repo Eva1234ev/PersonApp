@@ -27,6 +27,12 @@
 		A6149C2123514AC40094472C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6149C2023514AC40094472C /* UIView.swift */; };
 		A6149C23235153870094472C /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6149C22235153870094472C /* UIImageView.swift */; };
 		A6149C25235161F10094472C /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6149C24235161F10094472C /* UIViewController.swift */; };
+		A6682FB82361ABC700093451 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6682FB72361ABC700093451 /* Date.swift */; };
+		A6682FBA2361ABDB00093451 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6682FB92361ABDB00093451 /* CoreDataManager.swift */; };
+		A6682FBD2361ACB900093451 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6682FBB2361ACB900093451 /* Person+CoreDataClass.swift */; };
+		A6682FBE2361ACB900093451 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6682FBC2361ACB900093451 /* Person+CoreDataProperties.swift */; };
+		A6682FC02361AD3900093451 /* AppRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6682FBF2361AD3900093451 /* AppRequestManager.swift */; };
+		A6682FC22361AD6F00093451 /* AddPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6682FC12361AD6F00093451 /* AddPersonViewController.swift */; };
 		A67EF6AC2357567400A4FD6A /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67EF6AB2357567400A4FD6A /* PersonViewController.swift */; };
 		A67EF6AE23576EAD00A4FD6A /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67EF6AD23576EAD00A4FD6A /* PageCell.swift */; };
 		A67EF6B023576EDC00A4FD6A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67EF6AF23576EDC00A4FD6A /* Extensions.swift */; };
@@ -80,6 +86,12 @@
 		A6149C2023514AC40094472C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		A6149C22235153870094472C /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		A6149C24235161F10094472C /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		A6682FB72361ABC700093451 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		A6682FB92361ABDB00093451 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		A6682FBB2361ACB900093451 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A6682FBC2361ACB900093451 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A6682FBF2361AD3900093451 /* AppRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRequestManager.swift; sourceTree = "<group>"; };
+		A6682FC12361AD6F00093451 /* AddPersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPersonViewController.swift; sourceTree = "<group>"; };
 		A67EF6AB2357567400A4FD6A /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		A67EF6AD23576EAD00A4FD6A /* PageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 		A67EF6AF23576EDC00A4FD6A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -179,6 +191,7 @@
 				A6149BC623507F920094472C /* HomeViewController.swift */,
 				A684955C23542BD700AB13AC /* SettingViewController.swift */,
 				A67EF6AB2357567400A4FD6A /* PersonViewController.swift */,
+				A6682FC12361AD6F00093451 /* AddPersonViewController.swift */,
 				A67EF6AF23576EDC00A4FD6A /* Extensions.swift */,
 			);
 			path = ViewControllers;
@@ -204,6 +217,7 @@
 		A6149C0A23509FCD0094472C /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				A6682FBF2361AD3900093451 /* AppRequestManager.swift */,
 				A6149C182350BD1D0094472C /* RequestManager.swift */,
 				A6149C0B2350A1530094472C /* Extentions */,
 			);
@@ -229,6 +243,7 @@
 				A6149C2023514AC40094472C /* UIView.swift */,
 				A6149C22235153870094472C /* UIImageView.swift */,
 				A6149C24235161F10094472C /* UIViewController.swift */,
+				A6682FB72361ABC700093451 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -236,6 +251,9 @@
 		A6E63BF923533F6C0001F268 /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				A6682FB92361ABDB00093451 /* CoreDataManager.swift */,
+				A6682FBB2361ACB900093451 /* Person+CoreDataClass.swift */,
+				A6682FBC2361ACB900093451 /* Person+CoreDataProperties.swift */,
 				A6E63BF72353285E0001F268 /* ImageCash.swift */,
 			);
 			path = Store;
@@ -372,21 +390,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6682FB82361ABC700093451 /* Date.swift in Sources */,
 				A6149C112350A1530094472C /* Encodable.swift in Sources */,
 				A684955D23542BD700AB13AC /* SettingViewController.swift in Sources */,
 				A6149C1E23512A410094472C /* UILabel.swift in Sources */,
 				A6E63BF82353285E0001F268 /* ImageCash.swift in Sources */,
 				A6149C192350BD1D0094472C /* RequestManager.swift in Sources */,
+				A6682FBA2361ABDB00093451 /* CoreDataManager.swift in Sources */,
 				A6149C1B2350C5180094472C /* Error.swift in Sources */,
 				A6149C122350A1530094472C /* URLSession.swift in Sources */,
 				A6149B8C23507B040094472C /* AppDelegate.swift in Sources */,
+				A6682FBE2361ACB900093451 /* Person+CoreDataProperties.swift in Sources */,
 				A6149C25235161F10094472C /* UIViewController.swift in Sources */,
+				A6682FC02361AD3900093451 /* AppRequestManager.swift in Sources */,
 				A6149C23235153870094472C /* UIImageView.swift in Sources */,
 				A6149B9623507B040094472C /* PersonApp.xcdatamodeld in Sources */,
 				A67EF6AE23576EAD00A4FD6A /* PageCell.swift in Sources */,
 				A67EF6AC2357567400A4FD6A /* PersonViewController.swift in Sources */,
 				A6149C0923509D020094472C /* Person.swift in Sources */,
 				A6149C2123514AC40094472C /* UIView.swift in Sources */,
+				A6682FBD2361ACB900093451 /* Person+CoreDataClass.swift in Sources */,
 				A68495572353D79900AB13AC /* MenuTableViewController.swift in Sources */,
 				A6149C05235091C20094472C /* PersonsTableViewCell.swift in Sources */,
 				A67EF6B023576EDC00A4FD6A /* Extensions.swift in Sources */,
@@ -394,6 +417,7 @@
 				A6149BC723507F920094472C /* HomeViewController.swift in Sources */,
 				A6149C102350A1530094472C /* Data.swift in Sources */,
 				A6849559235408BB00AB13AC /* SplitViewController.swift in Sources */,
+				A6682FC22361AD6F00093451 /* AddPersonViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

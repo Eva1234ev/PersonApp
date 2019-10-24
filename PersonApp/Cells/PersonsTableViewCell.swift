@@ -25,19 +25,21 @@ class PersonsTableViewCell: UITableViewCell {
     }
     
     func configure(with person: Person?) {
-        
-        if let person = person {
-            personFullNameLabel.text = person.name
-            personTimeLabel.convertStrToDate(date: person.time)
-            if let url = URL( string:person.image)
-            {
-                personImage.load(url: url, id : person.itemID)
-            }
-            personView.alpha = 1
-        } else {
-            
-            personView.alpha = 0
-        }
-    }
+          
+          if let person = person {
+              personFullNameLabel.text = person.name
+              personTimeLabel.convertStrToDate(date: person.time)
+              if let url = URL( string:person.image!)
+              {
+                  personImage.load(url: url, id : person.itemId!)
+              }else {
+                  personImage.image =  UIImage(named: "profile")
+              }
+              personView.alpha = 1
+          } else {
+              
+              personView.alpha = 0
+          }
+      }
     
 }

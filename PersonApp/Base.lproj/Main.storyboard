@@ -292,8 +292,126 @@
             </objects>
             <point key="canvasLocation" x="1323" y="-593"/>
         </scene>
+        <!--Add Person View Controller-->
+        <scene sceneID="aan-Ie-ILc">
+            <objects>
+                <viewController storyboardIdentifier="AddPersonViewController" id="KNu-d8-iXA" customClass="AddPersonViewController" customModule="PersonApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9YJ-mR-B2T"/>
+                        <viewControllerLayoutGuide type="bottom" id="mLK-T9-UJa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BUb-Of-0bX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2K-Tb-h2b">
+                                <rect key="frame" x="327" y="13" width="38" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="38" id="3dW-kz-e8Y"/>
+                                    <constraint firstAttribute="height" constant="25" id="5Us-ip-Mj2"/>
+                                </constraints>
+                                <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="unwindFromSecond:" destination="KNu-d8-iXA" eventType="touchUpInside" id="LdX-qt-OWj"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="t4d-6g-NlO">
+                                <rect key="frame" x="51" y="188.5" width="273" height="290"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F28-WQ-AN9">
+                                        <rect key="frame" x="0.0" y="0.0" width="273" height="141"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="azU-Ps-ncf">
+                                                <rect key="frame" x="113" y="77" width="47" height="47"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add your favorite hero" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJR-vw-uzK">
+                                                <rect key="frame" x="0.0" y="22" width="273" height="47"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="47" id="bIK-7d-yuF"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="22"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.29888517530000003" green="0.28073535579999997" blue="0.36803305400000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstItem="AJR-vw-uzK" firstAttribute="leading" secondItem="F28-WQ-AN9" secondAttribute="leading" id="3S7-uA-e0v"/>
+                                            <constraint firstItem="AJR-vw-uzK" firstAttribute="top" secondItem="F28-WQ-AN9" secondAttribute="top" constant="22" id="5vc-BF-4lZ"/>
+                                            <constraint firstItem="AJR-vw-uzK" firstAttribute="centerX" secondItem="azU-Ps-ncf" secondAttribute="centerX" id="RZs-hJ-ruw"/>
+                                            <constraint firstItem="azU-Ps-ncf" firstAttribute="top" secondItem="AJR-vw-uzK" secondAttribute="bottom" constant="8" id="a8N-oT-1E8"/>
+                                            <constraint firstItem="azU-Ps-ncf" firstAttribute="centerX" secondItem="F28-WQ-AN9" secondAttribute="centerX" id="fVC-Zb-qqN"/>
+                                            <constraint firstItem="AJR-vw-uzK" firstAttribute="height" secondItem="F28-WQ-AN9" secondAttribute="height" multiplier="1:3" id="ljC-zh-ipq"/>
+                                            <constraint firstItem="azU-Ps-ncf" firstAttribute="width" secondItem="F28-WQ-AN9" secondAttribute="height" multiplier="1:3" id="qjw-XS-jKI"/>
+                                            <constraint firstItem="azU-Ps-ncf" firstAttribute="height" secondItem="F28-WQ-AN9" secondAttribute="height" multiplier="1:3" id="sxZ-wX-bEW"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fh0-po-exW">
+                                        <rect key="frame" x="0.0" y="155" width="273" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="EKN-4B-vXH"/>
+                                        </constraints>
+                                        <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="KNu-d8-iXA" id="BNh-gj-rud"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fNv-Vx-QtY">
+                                        <rect key="frame" x="0.0" y="203" width="273" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="f9O-Lb-Ajc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="KNu-d8-iXA" id="NAp-pT-XV5"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sH5-xo-7Vf">
+                                        <rect key="frame" x="0.0" y="251" width="273" height="39"/>
+                                        <color key="backgroundColor" red="0.29888517530000003" green="0.28073535579999997" blue="0.36803305400000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="39" id="GX1-qA-pjP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveButtonaAction:" destination="KNu-d8-iXA" eventType="touchUpInside" id="Fpi-Sb-88o"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.62915140069999997" green="0.59506077430000004" blue="0.75697816409999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="s2K-Tb-h2b" firstAttribute="top" secondItem="9YJ-mR-B2T" secondAttribute="bottom" constant="13" id="104-Fy-pkV"/>
+                            <constraint firstAttribute="trailing" secondItem="s2K-Tb-h2b" secondAttribute="trailing" constant="10" id="Bi3-Ws-FNv"/>
+                            <constraint firstItem="t4d-6g-NlO" firstAttribute="centerY" secondItem="BUb-Of-0bX" secondAttribute="centerY" id="FMR-qp-Ths"/>
+                            <constraint firstItem="t4d-6g-NlO" firstAttribute="centerX" secondItem="BUb-Of-0bX" secondAttribute="centerX" id="Ko3-XC-7L4"/>
+                            <constraint firstAttribute="trailing" secondItem="t4d-6g-NlO" secondAttribute="trailing" constant="51" id="kzY-cn-OeR"/>
+                            <constraint firstItem="t4d-6g-NlO" firstAttribute="leading" secondItem="BUb-Of-0bX" secondAttribute="leading" constant="51" id="v8D-Eu-jFh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionTextField" destination="fNv-Vx-QtY" id="Tt7-Hw-MI8"/>
+                        <outlet property="editView" destination="t4d-6g-NlO" id="syc-7d-34U"/>
+                        <outlet property="nameTextField" destination="Fh0-po-exW" id="RDq-41-8Sk"/>
+                        <outlet property="personImageView" destination="azU-Ps-ncf" id="tTG-JZ-n9b"/>
+                        <outlet property="topKeyboardConstarint" destination="FMR-qp-Ths" id="beQ-jx-qhk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YJu-8c-lCN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2974" y="109"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="close" width="25" height="25"/>
+        <image name="profile" width="18.5" height="21"/>
         <image name="set" width="96" height="96"/>
     </resources>
 </document>

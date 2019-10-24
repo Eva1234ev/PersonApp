@@ -10,10 +10,11 @@ import UIKit
 extension UIColor {
     static var mainColor = UIColor(red:0.63, green:0.60, blue:0.76, alpha:1.0)
 }
-class PersonViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class PersonViewController: UIViewController, AddPersonViewControllerDelegate  {
     var currentPerson: Person?
     let cellId = "cellId"
     var pages =  [Person]()
+    var viewModel = AppRequestManager()
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -96,30 +97,58 @@ class PersonViewController: UIViewController, UICollectionViewDataSource, UIColl
         self.collectionView.anchorToTop(self.view.topAnchor, left: self.view.leftAnchor, bottom: self.view.bottomAnchor, right: self.view.rightAnchor)
         
         self.registerCells()
-        
-        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .white)
-        self.view.addSubview(activityIndicator)
-        activityIndicator.center = CGPoint(x: self.view.bounds.midX, y: self.view.bounds.midY);
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.startAnimating()
-        RequestManager.getPersons(completionHandler: { response in
-            DispatchQueue.main.async {
-                
-                self.pages = response
-                
-                activityIndicator.stopAnimating()
-                self.collectionView.scrollToItem(at: IndexPath(row: self.pages.index(of: self.currentPerson!)!, section: 0), at: UICollectionViewScrollPosition.left, animated: true)
-            }
-            
-        }
-            , errorHandler: { error in
-                DispatchQueue.main.async {
-                }
-        })
+        self.collectionView.scrollToItem(at: IndexPath(row: self.pages.index(of: self.currentPerson!)!, section: 0), at: UICollectionViewScrollPosition.left, animated: true)
+        //        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .white)
+        //        self.view.addSubview(activityIndicator)
+        //        activityIndicator.center = CGPoint(x: self.view.bounds.midX, y: self.view.bounds.midY);
+        //        activityIndicator.hidesWhenStopped = true
+        //        activityIndicator.startAnimating()
+        //        RequestManager.getPersons(completionHandler: { response in
+        //            DispatchQueue.main.async {
+        //
+        //                self.pages = response
+        //
+        //                activityIndicator.stopAnimating()
+        //                self.collectionView.scrollToItem(at: IndexPath(row: self.pages.index(of: self.currentPerson!)!, section: 0), at: UICollectionViewScrollPosition.left, animated: true)
+        //            }
+        //
+        //        }
+        //            , errorHandler: { error in
+        //                DispatchQueue.main.async {
+        //                }
+        //        })
         
     }
     
+    func dismissed() {
+        updateData()
+        dismiss(animated: true, completion: nil)
+    }
     
+    func updateData() {
+        viewModel.reloadList = { [weak self] ()  in
+            DispatchQueue.main.async {
+                self!.pages = (self?.viewModel.arrayOfPerson)!
+                self!.collectionView.reloadData()
+                
+            }
+        }
+        viewModel.errorMessage = { [weak self] (message)  in
+            DispatchQueue.main.async {
+                print(message)
+                
+            }
+        }
+        
+        let isFetched = UserDefaults.standard.value(forKey: "isAllreadyFetch") as? Bool
+        if (isFetched == nil) || !(isFetched ?? false){
+            viewModel.getListData()
+        }else {
+            viewModel.fetchLocalData()
+        }
+        
+        
+    }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         view.endEditing(true)
     }
@@ -154,6 +183,13 @@ class PersonViewController: UIViewController, UICollectionViewDataSource, UIColl
         collectionView.register(PageCell.self, forCellWithReuseIdentifier: cellId)
     }
     
+
+    
+}
+
+extension PersonViewController : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
+
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return pages.count
     }
@@ -171,7 +207,13 @@ class PersonViewController: UIViewController, UICollectionViewDataSource, UIColl
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: view.frame.height)
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = AddPersonViewController.createInstance()
+        vc.modalPresentationStyle = .pageSheet
+        vc.delegate = self
+        vc.currentPerson = pages[indexPath.row]
+        self.present(vc, animated: true)
+    }
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         
         collectionView.collectionViewLayout.invalidateLayout()
@@ -183,6 +225,6 @@ class PersonViewController: UIViewController, UICollectionViewDataSource, UIColl
         
     }
     
+    
+    
 }
-
-

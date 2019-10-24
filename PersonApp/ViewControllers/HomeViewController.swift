@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-class HomeViewController:  UIViewController {
+import CoreData
+class HomeViewController:  UIViewController, AddPersonViewControllerDelegate {
     private enum CellIdentifiers {
         static let list = "PersonsTableViewCell"
     }
@@ -17,32 +17,89 @@ class HomeViewController:  UIViewController {
     var searching = false
     @IBOutlet weak var personSearch: UISearchBar!
     @IBOutlet weak var tblView: UITableView!
-    
+    var refreshControl   = UIRefreshControl()
+    var viewModel = AppRequestManager()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        self.tblView.addSubview(refreshControl)
+        
+        self.tblView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
+        let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
+        self.navigationItem.rightBarButtonItems = [add]
         hideKeyboardWhenTappedAround()
     }
-
- 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        RequestManager.getPersons(completionHandler: { response in
-            DispatchQueue.main.async {
-                self.personsArr = response
-                self.personSearch.delegate = self
-                self.tblView.reloadData()
-            }
-        }
-            , errorHandler: { error in
-                DispatchQueue.main.async {
-                }
-        })
+    
+    @objc func addTapped(){
+        let vc = AddPersonViewController.createInstance()
+        vc.modalPresentationStyle = .pageSheet
+        vc.delegate = self
+        
+        self.present(vc, animated: true)
         
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        updateData()
+    }
+    
+    func dismissed() {
+        dismiss(animated: true, completion: nil)
+        updateData()
+    }
+    
+    @objc func refresh(_ sender: Any) {
+        updateData()
+    }
+    
+    
+    func updateData() {
+        viewModel.reloadList = { [weak self] ()  in
+            DispatchQueue.main.async {
+                self!.personsArr = (self?.viewModel.arrayOfPerson)!
+                self!.searchedPerson = (self?.viewModel.arrayOfPerson)!
+                self!.personSearch.delegate = self
+                self!.tblView.reloadData()
+                self!.refreshControl.endRefreshing()
+            }
+        }
+        viewModel.errorMessage = { [weak self] (message)  in
+            DispatchQueue.main.async {
+                print(message)
+                self!.refreshControl.endRefreshing()
+            }
+        }
+        
+        let isFetched = UserDefaults.standard.value(forKey: "isAllreadyFetch") as? Bool
+        // appDelegate.deleteAll()
+        if (isFetched == nil) || !(isFetched ?? false){
+            //API calling
+            viewModel.getListData()
+        }else {
+            viewModel.fetchLocalData()
+        }
+        
+        //        RequestManager.getPersons(completionHandler: { response in
+        //            DispatchQueue.main.async {
+        //                self.personsArr = response
+        //                self.personSearch.delegate = self
+        //                self.tblView.reloadData()
+        //                self.refreshControl.endRefreshing()
+        //            }
+        //        }
+        //            , errorHandler: { error in
+        //                DispatchQueue.main.async {
+        //                }
+        //        })
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         imageCache.removeAllObjects()
-        // Dispose of any resources that can be recreated.
+        
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -52,7 +109,7 @@ class HomeViewController:  UIViewController {
             destVC.pages = self.personsArr
             destVC.currentPerson = sender as? Person
             
-           
+            
         }
     }
     
@@ -92,7 +149,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 extension HomeViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchedPerson = personsArr.filter({$0.name.lowercased().prefix(searchText.count) == searchText.lowercased()})
+        searchedPerson = personsArr.filter({$0.name!.lowercased().prefix(searchText.count) == searchText.lowercased()})
         searching = true
         tblView.reloadData()
     }

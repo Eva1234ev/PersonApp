@@ -51,16 +51,16 @@ class MenuTableViewController: UITableViewController {
         
         if let split = self.splitViewController
         {
-
+            
             if let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController, indexPath.row == 0{
-             split.showDetailViewController(VC, sender: nil)
-                //self.performSegue(withIdentifier: "home", sender: self)
+                split.showDetailViewController(VC, sender: nil)
+                
             }else if let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SettingViewController") as? SettingViewController{
                 split.showDetailViewController(VC, sender: nil)
             }
         }
     }
- 
+    
     
     
     func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
