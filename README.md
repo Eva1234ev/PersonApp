@@ -8,16 +8,15 @@ Orientation
   
 <img width="698" alt="Снимок экрана 2019-10-17 в 11 56 37 AM" src="https://user-images.githubusercontent.com/24794589/66989426-641f8b80-f0d5-11e9-85ad-7c390f85f9e6.png"> <img width="696" alt="Снимок экрана 2019-10-17 в 11 57 20 AM" src="https://user-images.githubusercontent.com/24794589/66989434-68e43f80-f0d5-11e9-949a-c599056eb1ec.png"> <img width="701" alt="Снимок экрана 2019-10-17 в 11 56 20 AM" src="https://user-images.githubusercontent.com/24794589/66989449-700b4d80-f0d5-11e9-9695-379e7c09f41d.png">
   
-IPad
-
-<img width="668" alt="Снимок экрана 2019-10-17 в 12 01 02 PM" src="https://user-images.githubusercontent.com/24794589/66989788-15bebc80-f0d6-11e9-9add-f296b5c3ada3.png">
-<img width="661" alt="Снимок экрана 2019-10-17 в 12 01 23 PM" src="https://user-images.githubusercontent.com/24794589/66989804-1e16f780-f0d6-11e9-8833-92b38b6d4e7c.png">
-<img width="668" alt="Снимок экрана 2019-10-17 в 12 01 38 PM" src="https://user-images.githubusercontent.com/24794589/66989844-2a02b980-f0d6-11e9-8b16-aef493250e3e.png">
-  Orientation 
+IPad Orientation 
 <img width="945" alt="Снимок экрана 2019-10-17 в 12 02 17 PM" src="https://user-images.githubusercontent.com/24794589/66990326-07bd6b80-f0d7-11e9-8fa3-c1ecd58eab2d.png">
 <img width="938" alt="Снимок экрана 2019-10-17 в 12 02 34 PM" src="https://user-images.githubusercontent.com/24794589/66990317-055b1180-f0d7-11e9-9ded-d29388fd3582.png">
 
  ## The PersonApp iOS sample app is a simple example app not a “real-world” application. It is a simple heroes persons list , where we use SplitViewController and CollectionView. Our apllication  work without relying on any library for iphone and ipad.
-
+ 
+ Used: 
+- SplitViewController
+- Horizontal CollectionView, AutoLayout, Orientation
+- Core data with Codable
 
 
